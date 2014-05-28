@@ -22,7 +22,6 @@ if [ "$PS1" ]; then
       PS1="\[$cyan\]\u@\h:\w\\[\033[0;39m\]\n\$ "
     fi
     export PROMPT_COMMAND="echo -n \[\$(date +%H:%M:%S)\]"
-    export PS1=" "$PS1"\[\e]30;\u@\h\a\]"
 fi
 
 #============================================================
@@ -50,17 +49,17 @@ alias mycal="gcal ~/Downloads/*ics && rm ~/Downloads/*ics"
 # Make the following commands run in background automatically:
 #-------------------------------------------------------------
 
-function subl {
-    if isWindows; then
-        /c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe $1 &
-    fi
-}
+if isWindows; then
+  function subl {
+    /c/Program\ Files/Sublime\ Text\ 3/sublime_text.exe $1 &
+  }
+fi
 
-function vi {
-    if isWindows; then
-        "/c/Program Files (x86)/Vim/vim72/gvim.exe" $1 &
-    fi
-}
+if isWindows; then
+  function vi {
+    "/c/Program Files (x86)/Vim/vim72/gvim.exe" $1 &
+  }
+fi
 
 #-------------------------------------------------------------
 # File & strings related functions:
@@ -79,3 +78,9 @@ function swap()
     mv $TMPFILE "$2"
 }
 
+#----------------
+# Local overrides
+#----------------
+
+local_overrides=~/.bashrc_local
+( test -r $local_overrides && . $local_overrides )
