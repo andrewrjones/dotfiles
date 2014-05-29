@@ -38,6 +38,10 @@ fi
 # Personnal Aliases
 #-------------------
 
+export RI="--format ansi --width 70"
+
+alias dzinstall='dzil install --install-command "cpanm ."'
+
 # TODO: work for Linux, Mac and Windows
 alias java6='export JAVA_HOME="C:\Program Files (x86)\Java\jdk1.6.0_35"'
 alias java7='export JAVA_HOME="C:\Program Files (x86)\Java\jdk1.7.0_07"'
