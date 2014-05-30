@@ -83,3 +83,5 @@ function swap()
 
 local_overrides=~/.bashrc_local
 ( test -r $local_overrides && . $local_overrides )
+
+true
