@@ -12,11 +12,19 @@ fi
 # Prompt
 #-------
 
+
+hostname=''
+if isWindows; then
+  hostname=`hostname`
+else
+  hostname=`hostname -s`
+fi
+
 red="\033[1;31m";
 norm="\033[0;39m";
 cyan="\033[1;36m";
 if [ "$PS1" ]; then
-  PROMPT_COMMAND='PS1="\e[37m[\[\$(date +%H:%M:%S)\]]\\[\033[0;33m\][\!]\`if [[ $? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u@\h: \w]\n\$\[\033[0m\] "; echo -ne "\033]0;`hostname -s`:`pwd`\007"'
+  PROMPT_COMMAND='PS1="\e[37m[\[\$(date +%H:%M:%S)\]]\\[\033[0;33m\][\!]\`if [[ $? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u@\h: \w]\n\$\[\033[0m\] "; echo -ne "\033]0;$hostname:`pwd`\007"'
 fi
 
 #============================================================
