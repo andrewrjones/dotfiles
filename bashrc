@@ -12,7 +12,6 @@ fi
 # Prompt
 #-------
 
-
 hostname=''
 if isWindows; then
   hostname=`hostname`
@@ -26,6 +25,8 @@ cyan="\033[1;36m";
 if [ "$PS1" ]; then
   PROMPT_COMMAND='PS1="\e[37m[\[\$(date +%H:%M:%S)\]]\\[\033[0;33m\][\!]\`if [[ $? = "0" ]]; then echo "\\[\\033[32m\\]"; else echo "\\[\\033[31m\\]"; fi\`[\u@\h: \w]\n\$\[\033[0m\] "; echo -ne "\033]0;$hostname:`pwd`\007"'
 fi
+
+[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 #============================================================
 #
@@ -41,15 +42,29 @@ fi
 # Exports
 #--------
 
+# Make vim the default editor
+export EDITOR="vim"
+# Don’t clear the screen after quitting a manual page
+export MANPAGER="less -X"
+
+# Larger bash history (allow 32³ entries; default is 500)
+export HISTSIZE=32768
+export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=ignoredups
+
+# timestamps for bash history. www.debian-administration.org/users/rossen/weblog/1
+# saved for later analysis
+HISTTIMEFORMAT='%F %T '
+export HISTTIMEFORMAT
+
+# Make some commands not show up in history
+export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
 
 export RI="--format ansi --width 70"
 
 #-------------------
 # Personnal Aliases
 #-------------------
-
-[ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
 
 alias sudob='sudo -E bash'
 
@@ -122,9 +137,6 @@ function extract() {
       didfolderexist=true
       read -p "$foldername already exists, do you want to overwrite it? (y/n) " -n 1
       echo
-      if [[ $REPLY =~ ^[Nn]$ ]]; then
-        return
-      fi
     fi
     mkdir -p "$foldername" && cd "$foldername"
     case $1 in
