@@ -37,14 +37,19 @@ fi
 #
 #============================================================
 
+#--------
+# Exports
+#--------
+
+export HISTCONTROL=ignoredups
+
+export RI="--format ansi --width 70"
+
 #-------------------
 # Personnal Aliases
 #-------------------
 
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
-
-export HISTCONTROL=ignoredups
-export RI="--format ansi --width 70"
 
 alias sudob='sudo -E bash'
 
