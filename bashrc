@@ -44,6 +44,8 @@ fi
 export HISTCONTROL=ignoredups
 export RI="--format ansi --width 70"
 
+alias sudob='sudo -E bash'
+
 alias dzinstall='dzil install --install-command "cpanm ."'
 
 # TODO: work for Linux, Mac and Windows
