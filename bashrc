@@ -60,7 +60,7 @@ HISTTIMEFORMAT='%F %T '
 export HISTTIMEFORMAT
 
 # Make some commands not show up in history
-export HISTIGNORE="ls:ls *:cd:cd -:pwd;exit:date:* --help"
+export HISTIGNORE="-:pwd;exit:date:* --help"
 
 export RI="--format ansi --width 70"
 
