@@ -42,6 +42,8 @@ fi
 # Exports
 #--------
 
+export PATH=$PATH:~/bin
+
 # Make vim the default editor
 export EDITOR="vim"
 # Don’t clear the screen after quitting a manual page
