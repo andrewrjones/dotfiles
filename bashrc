@@ -79,6 +79,10 @@ alias java7='export JAVA_HOME="C:\Program Files (x86)\Java\jdk1.7.0_07"'
 # TODO: get Downloads from env, for Windows and Mac
 alias mycal="gcal ~/Downloads/*ics && rm ~/Downloads/*ics"
 
+alias sum="xargs | tr ' ' '+' | bc" ## Usage: echo 1 2 3 | sum
+
+function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
 #-------------------------------------------------------------
 # Make the following commands run in background automatically:
 #-------------------------------------------------------------
