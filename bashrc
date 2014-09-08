@@ -7,6 +7,7 @@ if isWindows; then
     export TERM='cygwin'
 fi
 
+if which plenv > /dev/null; then eval "$(plenv init -)"; fi
 
 #-------
 # Prompt
