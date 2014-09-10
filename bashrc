@@ -10,7 +10,7 @@ fi
 if which plenv > /dev/null; then eval "$(plenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+eval "$(jenv init -)"
 
 #-------
 # Prompt
