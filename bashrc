@@ -72,6 +72,9 @@ export RI="--format ansi --width 70"
 # Personnal Aliases
 #-------------------
 
+# for tmux
+alias ssh='TERM=screen ssh'
+
 alias sudob='sudo -E bash'
 
 alias dzinstall='dzil install --install-command "cpanm ."'
