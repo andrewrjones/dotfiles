@@ -4,8 +4,8 @@
   # For username / creds / etc
   path = ~/.gitconfig_local
 
-#[core]
-#	pager = 
+[core]
+	pager = less -+F
 [alias]
   ci = commit
   st = status -s
