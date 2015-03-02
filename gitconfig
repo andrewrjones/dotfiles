@@ -12,7 +12,7 @@
   s = status -s
   co = checkout
   c = commit -am
-	up = pull
+	up = pull --rebase
 	p = push
   di = diff
   df = diff --color --color-words --abbrev
