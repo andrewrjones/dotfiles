@@ -7,10 +7,13 @@ if isWindows; then
     export TERM='cygwin'
 fi
 
+export PATH="$HOME/.ndenv/bin:/usr/local/bin:$PATH:~/bin"
+
 if which plenv &> /dev/null; then eval "$(plenv init -)"; fi
 if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
 if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 if which jenv  &> /dev/null; then eval "$(jenv  init -)"; fi
+if which ndenv &> /dev/null; then eval "$(ndenv init -)"; fi
 
 #-------
 # Prompt
@@ -45,8 +48,6 @@ fi
 #--------
 # Exports
 #--------
-
-export PATH=$PATH:~/bin
 
 # Make vim the default editor
 export EDITOR="vim"
@@ -89,6 +90,10 @@ alias mycal="gcal ~/Downloads/*ics && rm ~/Downloads/*ics"
 alias sum="xargs | tr ' ' '+' | bc" ## Usage: echo 1 2 3 | sum
 
 function psgrep() { ps axuf | grep -v grep | grep "$@" -i --color=auto; }
+
+function title() {
+  printf "\033]0;%s\007" "$1"
+}
 
 #-------------------------------------------------------------
 # Make the following commands run in background automatically:
