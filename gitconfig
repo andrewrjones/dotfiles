@@ -29,11 +29,12 @@
   bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
   ec = config --global -e
 	unadd = reset HEAD
+	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
 [push]
-	default = simple
+#	default = simple
 
 [color]
-	ui = always
+#	ui = always
 [core]
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
