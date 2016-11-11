@@ -30,6 +30,10 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+function __tab_title {
+  echo -n -e "\033]0;${PWD##*/}\007"
+}
+
 # Heavily inspired from https://github.com/demure/dotfiles/blob/master/subbash/prompt
 function __prompt_command() {
   local EXIT="$?"             # This needs to be first
@@ -147,7 +151,7 @@ function __prompt_command() {
 }
 
 if [ "$PS1" ]; then
-  export PROMPT_COMMAND=__prompt_command  # Func to gen PS1 after CMDs
+  export PROMPT_COMMAND="__tab_title ; __prompt_command"  # Func to gen PS1 after CMDs
 fi
 
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
