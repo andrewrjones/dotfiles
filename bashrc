@@ -74,9 +74,55 @@ function __prompt_command() {
 
     PS1+="${PSCol}${PSOpt}\W${RCol}" # Current working dir
 
+    ### Add SVN Status ### {{{
+    if [[ -d ".svn" ]] && [[ $(command -v svn) ]] ; then
+      local SStat="$(svn status | tr '\n' ':')"
+
+      ### Test For Changes ### {{{
+      ## Change this to test for 'ahead' or 'behind'!
+      local SChanges="$(echo ${SStat} | tr ':' '\n' | grep -v "^$" | grep -v "^\#\#" | wc -l | tr -d ' ')"
+      if [ "$SChanges" == "0" ]; then
+        local SVNCol=$Gre
+      else
+        local SVNCol=$Red
+      fi
+      ### End Test Changes ### }}}
+
+      ### Find Branch ### {{{
+      local SBra="$(svn info | awk '/URL:/ {print $2}')"
+      if [ "$SBra" ]; then
+        if [[ "$SBra" =~ trunk ]]; then
+          local SBra="T"      # Because why waste space
+        elif [[ $SBra =~ /branches/ ]]; then
+          local SBra="$(echo $SBra | sed -e 's#^.*/\(branches/.*\)/.*$#\1#')"
+        elif [[ $SBra =~ /tags/ ]]; then
+          local SBra="$(echo $SBra | sed -e 's#^.*/\(tags/.*\)/.*$#\1#')"
+        fi
+      fi
+      ### End Branch ### }}}
+
+      PS1+=" ${SVNCol}[$SBra]${RCol}" # Add result to prompt
+
+      if [ "$SStat" ]; then
+        ### Find Commit Status ### {{{
+
+        local SMod="$(echo ${SStat} | tr ':' '\n' | grep -c "^M")"
+        if [ "$SMod" -gt "0" ]; then
+          PS1+="${Pur}≠${RCol}${SMod}"  # Modified
+        fi
+
+        local SUnt="$(echo ${SStat} | tr ':' '\n' | grep -c "^\?")"
+        if [ "$SUnt" -gt "0" ]; then
+          PS1+="${Yel}?${RCol}${SUnt}"  # Untracked
+        fi
+        ### End Commit Status ### }}}
+      fi
+    ### End SVN Status ### }}}
+
     ### Add Git Status ### {{{
     ## Inspired by http://www.terminally-incoherent.com/blog/2013/01/14/whats-in-your-bash-prompt/
-    if [[ $(command -v git) ]]; then
+    # TODO: only go so far up the tree
+    elif [[ $(command -v git) ]]; then
       local GStat="$(git status --porcelain -b 2>/dev/null | tr '\n' ':')"
 
       if [ "$GStat" ]; then
@@ -99,7 +145,7 @@ function __prompt_command() {
         local GChanges="$(echo ${GStat} | tr ':' '\n' | grep -v "^$" | grep -v "^\#\#" | wc -l | tr -d ' ')"
         if [ "$GChanges" == "0" ]; then
           local GitCol=$Gre
-          else
+        else
           local GitCol=$Red
         fi
         ### End Test Changes ### }}}
@@ -110,7 +156,7 @@ function __prompt_command() {
           if [ "$GBra" == "master" ]; then
             local GBra="M"      # Because why waste space
           fi
-          else
+        else
           local GBra="ERROR"      # It could happen supposedly?
         fi
         ### End Branch ### }}}
