@@ -76,47 +76,57 @@ function __prompt_command() {
 
     ### Add SVN Status ### {{{
     if [[ -d ".svn" ]] && [[ $(command -v svn) ]] ; then
-      local SStat="$(svn status | tr '\n' ':')"
-
-      ### Test For Changes ### {{{
-      ## Change this to test for 'ahead' or 'behind'!
-      local SChanges="$(echo ${SStat} | tr ':' '\n' | grep -v "^$" | grep -v "^\#\#" | wc -l | tr -d ' ')"
-      if [ "$SChanges" == "0" ]; then
-        local SVNCol=$Gre
-      else
-        local SVNCol=$Red
-      fi
-      ### End Test Changes ### }}}
-
-      ### Find Branch ### {{{
-      local SBra="$(svn info | awk '/URL:/ {print $2}')"
-      if [ "$SBra" ]; then
-        if [[ "$SBra" =~ trunk ]]; then
-          local SBra="T"      # Because why waste space
-        elif [[ $SBra =~ /branches/ ]]; then
-          local SBra="$(echo $SBra | sed -e 's#^.*/\(branches/.*\)/.*$#\1#')"
-        elif [[ $SBra =~ /tags/ ]]; then
-          local SBra="$(echo $SBra | sed -e 's#^.*/\(tags/.*\)/.*$#\1#')"
-        fi
-      fi
-      ### End Branch ### }}}
-
-      PS1+=" ${SVNCol}[$SBra]${RCol}" # Add result to prompt
+      set -f # SVN uses wildcard as output, so prevent expansion
+      local SStat="$(svn status -u | tr '\n' ';')"
 
       if [ "$SStat" ]; then
+
+        ### Test For Changes ### {{{
+        local SChanges="$(echo ${SStat} | tr ';' '\n' | grep -v "^$" | grep -v "^\#\#" | grep -v "Status against" | wc -l | tr -d ' ')"
+        if [ "$SChanges" == "0" ]; then
+          local SVNCol=$Gre
+        else
+          local SVNCol=$Red
+        fi
+        ### End Test Changes ### }}}
+
+        ### Find Branch ### {{{
+        local SBra="$(svn info | awk '/URL:/ {print $2}')"
+        if [ "$SBra" ]; then
+          if [[ "$SBra" =~ trunk ]]; then
+            local SBra="T"      # Because why waste space
+          elif [[ $SBra =~ /branches/ ]]; then
+            local SBra="$(echo $SBra | sed -e 's#^.*/\(branches/.*\)/.*$#\1#')"
+          elif [[ $SBra =~ /tags/ ]]; then
+            local SBra="$(echo $SBra | sed -e 's#^.*/\(tags/.*\)/.*$#\1#')"
+          fi
+        fi
+        ### End Branch ### }}}
+
+        PS1+=" ${SVNCol}[$SBra]${RCol}" # Add result to prompt
+
+        ## Needs an `svn up`
+
+        local SBeh="$(echo ${SStat} | tr ';' '\n' | grep -c "\*")"
+        if [ "$SBeh" -gt "0" ]; then
+          PS1+="${Red}↓${RCol}${SBeh}"  # Behind
+        fi
+
         ### Find Commit Status ### {{{
 
-        local SMod="$(echo ${SStat} | tr ':' '\n' | grep -c "^M")"
+        local SMod="$(echo ${SStat} | tr ';' '\n' | grep -c "^M")"
         if [ "$SMod" -gt "0" ]; then
           PS1+="${Pur}≠${RCol}${SMod}"  # Modified
         fi
 
-        local SUnt="$(echo ${SStat} | tr ':' '\n' | grep -c "^\?")"
+        local SUnt="$(echo ${SStat} | tr ';' '\n' | grep -c "^\?")"
         if [ "$SUnt" -gt "0" ]; then
           PS1+="${Yel}?${RCol}${SUnt}"  # Untracked
         fi
         ### End Commit Status ### }}}
+
       fi
+      set +f
     ### End SVN Status ### }}}
 
     ### Add Git Status ### {{{
