@@ -72,5 +72,5 @@
 [url "git@github.com:andrewrjones/"]
   insteadOf = "git://github.com/andrewrjones/"
 [help]
-	autocorrect = 1
+	autocorrect = 15
 
