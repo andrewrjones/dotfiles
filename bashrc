@@ -15,6 +15,9 @@ if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 if which jenv  &> /dev/null; then eval "$(jenv  init -)"; fi
 if which ndenv &> /dev/null; then eval "$(ndenv init -)"; fi
 
+#http://superuser.com/questions/950403/bash-history-not-preserved-between-terminal-sessions-on-mac
+export SHELL_SESSION_HISTORY=0
+
 #-------
 # Prompt
 #-------
@@ -96,7 +99,7 @@ function __prompt_command() {
           if [[ "$SBra" =~ trunk ]]; then
             local SBra="T"      # Because why waste space
           elif [[ $SBra =~ /branches/ ]]; then
-            local SBra="$(echo $SBra | sed -e 's#^.*/\(branches/.*\)/.*$#\1#')"
+            local SBra="$(echo $SBra | awk -F\/ '{print $NF}')"
           elif [[ $SBra =~ /tags/ ]]; then
             local SBra="$(echo $SBra | sed -e 's#^.*/\(tags/.*\)/.*$#\1#')"
           fi
@@ -242,6 +245,10 @@ export HISTIGNORE="-:pwd;exit:date:* --help"
 
 export RI="--format ansi --width 70"
 
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+
 #-------------------
 # Personnal Aliases
 #-------------------
@@ -348,6 +355,10 @@ function extract() {
   else
     echo "'$1' is not a valid file"
   fi
+}
+
+function open_url_app() {
+  /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --kiosk --app=$1
 }
 
 #----------------
