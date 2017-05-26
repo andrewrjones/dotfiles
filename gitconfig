@@ -32,7 +32,8 @@
 	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
   oneline = log --pretty=tformat:"%Cred%h%Creset%x09%Cgreen%an%Creset%x09%ad%x09%s"  --date=short --graph --decorate
   # https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
-  recent = git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+  recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+  graph = log --graph --all --decorate --stat --date=iso
 [push]
 #	default = simple
 
