@@ -18,6 +18,10 @@ if which ndenv &> /dev/null; then eval "$(ndenv init -)"; fi
 #http://superuser.com/questions/950403/bash-history-not-preserved-between-terminal-sessions-on-mac
 export SHELL_SESSION_HISTORY=0
 
+# Google Cloud SDK
+source ~/dev/google-cloud-sdk/completion.bash.inc
+source ~/dev/google-cloud-sdk/path.bash.inc
+
 #-------
 # Prompt
 #-------
