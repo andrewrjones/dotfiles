@@ -1,5 +1,5 @@
 # some from https://github.com/paulirish/dotfiles/blob/master/.gitconfig
-#
+# and https://gist.github.com/robmiller/6018582
 [include]
   # For username / creds / etc
   path = ~/.gitconfig_local
@@ -7,6 +7,9 @@
 [core]
 	pager = less -+F
 [alias]
+  # Get the current branch name (not so useful in itself, but used in
+  # other aliases)
+  branch-name = "!git rev-parse --abbrev-ref HEAD"
   ci = commit
   st = status -s
   s = status -s
@@ -34,6 +37,11 @@
   # https://csswizardry.com/2017/05/little-things-i-like-to-do-with-git/
   recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
   graph = log --graph --all --decorate --stat --date=iso
+  # Push the current branch to the remote "origin", and set it to track
+  # the upstream branch
+  pu = "!git push -u origin $(git branch-name)"
+  # Delete the remote version of the current branch
+  unpu = "!git push origin :$(git branch-name)"
 [push]
 #	default = simple
 
