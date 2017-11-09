@@ -7,7 +7,7 @@ if isWindows; then
     export TERM='cygwin'
 fi
 
-export PATH="$HOME/.ndenv/bin:/usr/local/bin:/usr/local/opt/python/libexec/bin:$PATH:~/bin"
+export PATH="$HOME/bin:$HOME/.ndenv/bin:/usr/local/bin:/usr/local/opt/python/libexec/bin:$PATH"
 
 if which plenv &> /dev/null; then eval "$(plenv init -)"; fi
 if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
