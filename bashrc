@@ -202,6 +202,9 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 # Personnal Aliases
 #-------------------
 
+# from https://help.dreamhost.com/hc/en-us/articles/214981288-Flushing-your-DNS-cache-in-Mac-OS-X-and-Linux
+alias flushdns="sudo killall -HUP mDNSResponder;sudo killall mDNSResponderHelper;sudo dscacheutil -flushcache"
+
 # for tmux
 alias ssh='TERM=screen ssh'
 
