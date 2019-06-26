@@ -14,6 +14,7 @@ if which pyenv &> /dev/null; then eval "$(pyenv init -)"; fi
 if which rbenv &> /dev/null; then eval "$(rbenv init -)"; fi
 if which jenv  &> /dev/null; then eval "$(jenv  init -)"; fi
 if which ndenv &> /dev/null; then eval "$(ndenv init -)"; fi
+#if which hub   &> /dev/null; then eval "$(hub alias -s)"; fi
 
 #http://superuser.com/questions/950403/bash-history-not-preserved-between-terminal-sessions-on-mac
 export SHELL_SESSION_HISTORY=0
@@ -21,6 +22,13 @@ export SHELL_SESSION_HISTORY=0
 # Google Cloud SDK
 source ~/dev/google-cloud-sdk/completion.bash.inc
 source ~/dev/google-cloud-sdk/path.bash.inc
+
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+
+# homebrew
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
+export HOMEBREW_NO_ANALYTICS=1
 
 #-------
 # Prompt
@@ -211,10 +219,6 @@ alias ssh='TERM=screen ssh'
 alias sudob='sudo -E bash'
 
 alias dzinstall='dzil install --install-command "cpanm ."'
-
-# TODO: work for Linux, Mac and Windows
-alias java6='export JAVA_HOME="C:\Program Files (x86)\Java\jdk1.6.0_35"'
-alias java7='export JAVA_HOME="C:\Program Files (x86)\Java\jdk1.7.0_07"'
 
 # TODO: get Downloads from env, for Windows and Mac
 alias mycal="gcal ~/Downloads/*ics && rm ~/Downloads/*ics"
