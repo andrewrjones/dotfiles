@@ -69,6 +69,7 @@
 	insteadOf = "gh:"
 	pushInsteadOf = "github:"
 	pushInsteadOf = "git://github.com/"
+	insteadOf = https://github.com/
 [url "git://github.com/"]
 	insteadOf = "github:"
 [url "git@gist.github.com:"]
@@ -88,3 +89,5 @@
 [user]
 	email = andrew@andrew-jones.com
 	name = Andrew Jones
+[diff]
+	noprefix = true
