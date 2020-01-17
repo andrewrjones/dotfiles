@@ -21,6 +21,7 @@ bin/
 build/
 vendor/
 out/
+.sts4-cache
 
 # Ignore idea project files
 .idea/
