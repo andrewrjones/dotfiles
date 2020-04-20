@@ -11,5 +11,3 @@
 \x auto
 \set HISTSIZE 2000
 \pset null '(null)'
-
-\unset QUIET
