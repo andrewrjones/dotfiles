@@ -26,6 +26,7 @@
   l  = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
   b  = branch
   amend = commit -a --amend
+  qamend = commit -a --amend --no-edit
   # remove all merged branches. should be ran from master
   bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
   # runs bclean from master, after pulling
