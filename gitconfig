@@ -50,6 +50,7 @@
 [core]
 	excludesfile = /Users/andrewjones/.dotfiles/gitignore_global
 	attributesfile = ~/.gitattributes
+	editor = code --wait --new-window
 [color "branch"]
 	current = yellow reverse
 	local = yellow
