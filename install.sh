@@ -24,3 +24,7 @@ for file in $files; do
 done
 
 brew bundle
+
+# https://ohmyz.sh/
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+

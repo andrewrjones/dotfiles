@@ -40,4 +40,6 @@ brew "zsh"
 
 cask "adoptopenjdk"
 cask "docker"
+cask "iterm2"
 cask "google-cloud-sdk"
+cask "visual-studio-code"
