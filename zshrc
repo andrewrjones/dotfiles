@@ -117,3 +117,6 @@ export JAVA_14_HOME=$(/usr/libexec/java_home -v14)
 alias java8='export JAVA_HOME=$JAVA_8_HOME'
 alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java14='export JAVA_HOME=$JAVA_14_HOME'
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /Users/andrewjones/bin/terraform terraform
