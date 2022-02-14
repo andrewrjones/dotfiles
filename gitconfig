@@ -5,7 +5,7 @@
   path = ~/.gitconfig_local
 
 [core]
-	pager = less -+F
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
   # Get the current branch name (not so useful in itself, but used in
   # other aliases)
@@ -47,6 +47,7 @@
 #	default = simple
 
 [color]
+	ui = true
 #	ui = always
 [core]
 	excludesfile = /Users/andrewjones/.dotfiles/gitignore_global
@@ -57,10 +58,13 @@
 	local = yellow
 	remote = green
 [color "diff"]
-	meta = yellow bold
+	meta = 11
 	frag = magenta bold
 	old = red bold
 	new = green bold
+	func = 146 bold
+	commit = yellow bold
+	whitespace = red reverse
 [color "status"]
 	added = yellow
 	changed = green
@@ -99,3 +103,10 @@
 	rebase = true
 [init]
 	defaultBranch = main
+[interactive]
+	diffFilter = diff-so-fancy --patch
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
