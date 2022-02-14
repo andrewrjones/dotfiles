@@ -8,6 +8,7 @@ brew "openssl"
 brew "openssl@1.1" # wget dependency
 
 brew "awscli"
+brew "bat"
 brew "broot"
 brew "cloc"
 brew "cmake"

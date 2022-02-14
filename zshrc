@@ -105,6 +105,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.poetry/bin:$PATH"
 
+# Replace cat with bat
+alias cat='bat'
 
 # JAVA
 
