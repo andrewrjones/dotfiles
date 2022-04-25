@@ -122,3 +122,6 @@ alias java14='export JAVA_HOME=$JAVA_14_HOME'
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/andrewjones/bin/terraform terraform
+
+# direnv https://github.com/direnv/direnv
+eval "$(direnv hook zsh)"
