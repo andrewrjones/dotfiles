@@ -44,6 +44,7 @@ brew "tldr"
 brew "tmux"
 brew "thefuck"
 brew "wget"
+brew "wkhtmltopdf"
 brew "zsh"
 
 cask "temurin8"
