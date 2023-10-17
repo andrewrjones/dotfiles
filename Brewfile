@@ -8,6 +8,7 @@ brew "openssl"
 brew "openssl@1.1" # wget dependency
 
 brew "awscli"
+brew "ack"
 brew "bat"
 brew "broot"
 brew "cloc"
@@ -54,3 +55,4 @@ cask "ngrok"
 cask "google-cloud-sdk"
 cask "sf-symbols"
 cask "visual-studio-code"
+cask "rectangle"
