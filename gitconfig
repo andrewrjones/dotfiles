@@ -1,8 +1,5 @@
 # some from https://github.com/paulirish/dotfiles/blob/master/.gitconfig
 # and https://gist.github.com/robmiller/6018582
-[include]
-  # For username / creds / etc
-  path = ~/.gitconfig_local
 
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
@@ -113,3 +110,7 @@
 	newHighlight = green bold 22
 [rerere]
 	enabled = true
+
+[include]
+  # For username / creds / elocal overrides /etc
+  path = ~/.gitconfig_local
