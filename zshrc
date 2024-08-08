@@ -123,5 +123,36 @@ alias java14='export JAVA_HOME=$JAVA_14_HOME'
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/andrewjones/bin/terraform terraform
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/andrewjones/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/andrewjones/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/andrewjones/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/andrewjones/google-cloud-sdk/completion.zsh.inc'; fi
+
+_direnv_hook() {
+  trap -- '' SIGINT;
+  eval "$("/usr/local/bin/direnv" export zsh)";
+  trap - SIGINT;
+}
 # direnv https://github.com/direnv/direnv
 eval "$(direnv hook zsh)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+typeset -ag precmd_functions;
+if [[ -z "${precmd_functions[(r)_direnv_hook]+1}" ]]; then
+  precmd_functions=( _direnv_hook ${precmd_functions[@]} )
+fi
+typeset -ag chpwd_functions;
+if [[ -z "${chpwd_functions[(r)_direnv_hook]+1}" ]]; then
+  chpwd_functions=( _direnv_hook ${chpwd_functions[@]} )
+fi
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/andrewjones/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
