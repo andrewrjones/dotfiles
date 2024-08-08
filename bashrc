@@ -330,3 +330,7 @@ true
 export PATH="$PATH:$HOME/.rvm/bin"
 
 complete -C /Users/andrewjones/bin/terraform terraform
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/andrewjones/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
