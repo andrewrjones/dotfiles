@@ -16,7 +16,8 @@
   up = pull --rebase --prune
 	p = push
   pd = "!gh pr create --draft --fill --web"
-  pr = "!gh pr create --fill --web"
+  #pr = "!gh pr create --fill --web"
+  pr = "!f() { gh pr create --fill --web; } f;"
   di = diff
   df = diff --color --color-words --abbrev
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
