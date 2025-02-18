@@ -94,6 +94,7 @@
 [user]
 	email = andrew@andrew-jones.com
 	name = Andrew Jones
+	signingkey = /Users/andrewjones/.ssh/id_ed25519.pub
 [diff]
 	noprefix = true
 [rebase]
@@ -115,3 +116,5 @@
 [include]
   # For username / creds / elocal overrides /etc
   path = ~/.gitconfig_local
+[gpg]
+	format = ssh
