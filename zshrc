@@ -4,7 +4,7 @@ export PATH=$HOME/bin:/usr/local/bin:$HOME/google-cloud-sdk/bin:$PATH
 export EDITOR='vim'
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/andrewjones/.oh-my-zsh"
+export ZSH="/Users/$USER/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -163,3 +163,5 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 cd() {
     builtin cd "$@" && [ -f "venv/bin/activate" ] && source "venv/bin/activate"
 }
+
+. "$HOME/.local/bin/env"
