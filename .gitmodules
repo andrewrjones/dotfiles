@@ -1,0 +1,3 @@
+[submodule "worktree-manager"]
+	path = worktree-manager
+	url = https://gist.github.com/mathd/5ccfe70edc70c129828fadb9f54c7f5e
