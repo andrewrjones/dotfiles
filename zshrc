@@ -125,12 +125,6 @@ alias java14='export JAVA_HOME=$JAVA_14_HOME'
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/andrewjones/bin/terraform terraform
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/andrewjones/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/andrewjones/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/andrewjones/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/andrewjones/google-cloud-sdk/completion.zsh.inc'; fi
-
 _direnv_hook() {
   trap -- '' SIGINT;
   eval "$("/usr/local/bin/direnv" export zsh)";
@@ -165,3 +159,11 @@ cd() {
 }
 
 . "$HOME/.local/bin/env"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "/Users/${USER}/google-cloud-sdk/path.zsh.inc" ]; then . "/Users/${USER}/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "/Users/${USER}/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/${USER}/google-cloud-sdk/completion.zsh.inc"; fi
+
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
