@@ -173,3 +173,6 @@ complete -o nospace -C /opt/homebrew/bin/terraform terraform
 export W_PROJECTS_DIR="$HOME/work"
 export W_WORKTREES_DIR="$HOME/work/worktrees"
 source $HOME/dotfiles/worktree-manager/worktree-manager.zsh
+
+export PATH=$HOME/flutter/bin:$PATH
+export PATH="/Users/andrewjones/.local/bin:$PATH"
