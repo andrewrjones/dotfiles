@@ -146,7 +146,7 @@ cd() {
     builtin cd "$@" && [ -f "venv/bin/activate" ] && source "venv/bin/activate"
 }
 
-. "$HOME/.local/bin/env"
+if [ -f "${HOME}/.local/bin/env" ]; then . "$HOME/.local/bin/env"; fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "/Users/${USER}/google-cloud-sdk/path.zsh.inc" ]; then . "/Users/${USER}/google-cloud-sdk/path.zsh.inc"; fi
