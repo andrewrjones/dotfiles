@@ -154,8 +154,6 @@ if [ -f "/Users/${USER}/google-cloud-sdk/path.zsh.inc" ]; then . "/Users/${USER}
 # The next line enables shell command completion for gcloud.
 if [ -f "/Users/${USER}/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/${USER}/google-cloud-sdk/completion.zsh.inc"; fi
 
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
-
 # Worktree manager
 # from https://gist.github.com/mathd/5ccfe70edc70c129828fadb9f54c7f5e
 export W_PROJECTS_DIR="$HOME/work"
