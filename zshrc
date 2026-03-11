@@ -75,6 +75,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   macos
+  springernature
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -158,6 +159,11 @@ if [ -f "/Users/${USER}/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/$
 # from https://gist.github.com/mathd/5ccfe70edc70c129828fadb9f54c7f5e
 export W_PROJECTS_DIR="$HOME/work"
 export W_WORKTREES_DIR="$HOME/work/worktrees"
+source $HOME/dotfiles/worktree-manager/worktree-manager.zsh
+
+
+export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 source $HOME/.dotfiles/worktree-manager/worktree-manager.zsh
 
 export PATH=$HOME/flutter/bin:$PATH
