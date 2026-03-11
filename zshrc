@@ -182,7 +182,7 @@ export W_WORKTREES_DIR="$HOME/work/worktrees"
 source $HOME/dotfiles/worktree-manager/worktree-manager.zsh
 
 
-export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
+export SDKMAN_DIR="/opt/homebrew/opt/sdkman-cli/libexec"
 
 # Lazy load SDKMAN
 sdk() {
