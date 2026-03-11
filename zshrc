@@ -183,7 +183,13 @@ source $HOME/dotfiles/worktree-manager/worktree-manager.zsh
 
 
 export SDKMAN_DIR=$(brew --prefix sdkman-cli)/libexec
-[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+# Lazy load SDKMAN
+sdk() {
+  unset -f sdk
+  [[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+  sdk "$@"
+}
 source $HOME/.dotfiles/worktree-manager/worktree-manager.zsh
 
 export PATH=$HOME/flutter/bin:$PATH
