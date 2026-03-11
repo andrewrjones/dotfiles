@@ -122,10 +122,6 @@ _direnv_hook() {
 # direnv https://github.com/direnv/direnv
 eval "$(direnv hook zsh)"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 typeset -ag precmd_functions;
 if [[ -z "${precmd_functions[(r)_direnv_hook]+1}" ]]; then
   precmd_functions=( _direnv_hook ${precmd_functions[@]} )
