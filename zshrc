@@ -194,3 +194,6 @@ source $HOME/.dotfiles/worktree-manager/worktree-manager.zsh
 
 export PATH=$HOME/flutter/bin:$PATH
 export PATH="/Users/andrewjones/.local/bin:$PATH"
+
+# Github Copilot
+export COPILOT_ALLOW_ALL=true
