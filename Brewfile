@@ -9,6 +9,7 @@ brew "openssl@1.1" # wget dependency
 
 brew "awscli"
 brew "ack"
+brew "anomalyco/tap/opencode"
 brew "ariga/tap/atlas"
 brew "bat"
 brew "cloc"
@@ -36,6 +37,7 @@ brew "wget"
 brew "zsh"
 
 cask "iterm2"
+cask "lm-studio"
 cask "google-cloud-sdk"
 cask "rancher"
 cask "sf-symbols"
