@@ -114,23 +114,6 @@ alias cat='bat'
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/andrewjones/bin/terraform terraform
 
-_direnv_hook() {
-  trap -- '' SIGINT;
-  eval "$("/usr/local/bin/direnv" export zsh)";
-  trap - SIGINT;
-}
-# direnv https://github.com/direnv/direnv
-eval "$(direnv hook zsh)"
-
-typeset -ag precmd_functions;
-if [[ -z "${precmd_functions[(r)_direnv_hook]+1}" ]]; then
-  precmd_functions=( _direnv_hook ${precmd_functions[@]} )
-fi
-typeset -ag chpwd_functions;
-if [[ -z "${chpwd_functions[(r)_direnv_hook]+1}" ]]; then
-  chpwd_functions=( _direnv_hook ${chpwd_functions[@]} )
-fi
-
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/andrewjones/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
@@ -197,3 +180,5 @@ export PATH="/Users/andrewjones/.local/bin:$PATH"
 
 # Github Copilot
 export COPILOT_ALLOW_ALL=true
+
+eval "$(/opt/homebrew/bin/mise activate zsh)"
