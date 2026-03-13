@@ -107,7 +107,7 @@ sdk() {
 source $HOME/.dotfiles/worktree-manager/worktree-manager.zsh
 
 export PATH=$HOME/flutter/bin:$PATH
-export PATH="/Users/andrewjones/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Github Copilot
 export COPILOT_ALLOW_ALL=true
@@ -115,6 +115,6 @@ export COPILOT_ALLOW_ALL=true
 eval "$(/opt/homebrew/bin/mise activate zsh)"
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/ajw3402/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
