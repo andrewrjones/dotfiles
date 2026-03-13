@@ -39,7 +39,6 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   macos
-  springernature
 )
 
 source $ZSH/oh-my-zsh.sh
