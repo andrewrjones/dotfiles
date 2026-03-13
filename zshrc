@@ -182,3 +182,8 @@ export PATH="/Users/andrewjones/.local/bin:$PATH"
 export COPILOT_ALLOW_ALL=true
 
 eval "$(/opt/homebrew/bin/mise activate zsh)"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ajw3402/.lmstudio/bin"
+# End of LM Studio CLI section
+

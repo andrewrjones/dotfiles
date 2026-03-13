@@ -336,3 +336,8 @@ export PATH="/Users/andrewjones/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 . "$HOME/.local/bin/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ajw3402/.lmstudio/bin"
+# End of LM Studio CLI section
+
