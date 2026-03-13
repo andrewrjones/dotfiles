@@ -1,4 +1,4 @@
-export PATH=$HOME/bin:/usr/local/bin:$HOME/google-cloud-sdk/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export EDITOR='vim'
 
