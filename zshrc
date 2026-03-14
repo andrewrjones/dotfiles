@@ -83,6 +83,8 @@ export PATH="$HOME/.local/bin:$PATH"
 export COPILOT_ALLOW_ALL=true
 
 eval "$(mise activate zsh)"
+# Automatically load dotenv files
+export MISE_ENV_FILE=.env
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.lmstudio/bin"
