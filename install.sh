@@ -1,3 +1,5 @@
+#!/bin/bash
+
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles.bk              # old dotfiles backup directory
 # list of files/folders to symlink in homedir
@@ -22,8 +24,6 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
-
-brew bundle
 
 # https://ohmyz.sh/
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
