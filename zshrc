@@ -82,7 +82,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Github Copilot
 export COPILOT_ALLOW_ALL=true
 
-eval "$(/opt/homebrew/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.lmstudio/bin"
