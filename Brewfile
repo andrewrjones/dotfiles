@@ -1,12 +1,3 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-versions"
-tap "homebrew/core"
-tap "homebrew/services"
-
-brew "openssl"
-brew "openssl@1.1" # wget dependency
-
 brew "awscli"
 brew "ack"
 brew "anomalyco/tap/opencode"
@@ -27,7 +18,6 @@ brew "librsvg"
 brew "mise"
 brew "pulumi/tap/pulumi"
 brew "python3"
-brew "rbenv"
 brew "ssh-copy-id"
 brew "tldr"
 brew "tree"
