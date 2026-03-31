@@ -22,6 +22,7 @@ brew "ripgrep"
 brew "ssh-copy-id"
 brew "tldr"
 brew "tree"
+brew "uv"
 brew "wget"
 brew "zsh"
 
