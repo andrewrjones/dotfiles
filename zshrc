@@ -65,7 +65,7 @@ if [ -f "/Users/${USER}/google-cloud-sdk/completion.zsh.inc" ]; then . "/Users/$
 # from https://gist.github.com/mathd/5ccfe70edc70c129828fadb9f54c7f5e
 export W_PROJECTS_DIR="$HOME/work"
 export W_WORKTREES_DIR="$HOME/work/worktrees"
-source $HOME/dotfiles/worktree-manager/worktree-manager.zsh
+source $HOME/.dotfiles/worktree-manager/worktree-manager.zsh
 
 
 export SDKMAN_DIR="/opt/homebrew/opt/sdkman-cli/libexec"
