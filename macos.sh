@@ -30,7 +30,7 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram StartupMute=%01
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
