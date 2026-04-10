@@ -1,0 +1,50 @@
+{
+  // you can find the documentation for this file at https://opencode.ai/docs/config
+  "$schema": "https://opencode.ai/config.json",
+  "model": "anthropic/claude-sonnet-4-6",
+  "autoupdate": true,
+  "instructions": ["~/.dotfiles/INSTRUCTIONS.md"], // enter a filename here to specify shared instructions
+  "share": "disabled",
+  "enabled_providers": ["github-copilot"],
+  "permission": {
+    "bash": {
+      "*": "ask",
+      
+      // things that are _fairly_ safe
+      "bats *": "allow",
+      "cat *": "allow",
+      "echo *": "allow",
+      "find *": "allow",
+      "git *": "allow",
+      "gh run list *": "allow",
+      "gh run view *": "allow",
+      "grep *": "allow",
+      "head *": "allow",
+      "ls *": "allow",
+      "make *": "allow",
+      "man *": "allow",
+      "mkdir *": "allow",
+      "mktemp *": "allow",
+      "pwd *": "allow",
+      "sed *": "allow",
+      "shellcheck *": "allow",
+      "sleep *": "allow",
+      "sort *": "allow",
+      "tail *": "allow",
+      "touch *": "allow",
+      "true *": "allow",
+      "wc *": "allow",
+      "which *": "allow",
+      
+      // build tools, be careful here as they can do pretty much anything
+      "gradlew *": "allow",
+      "npm *": "allow",
+      "uv *": "allow",
+      
+      // things that are always denied
+      "git push*": "deny"
+    }
+  },
+  "mcp": {
+  }
+}

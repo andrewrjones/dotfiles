@@ -25,6 +25,9 @@ for file in $files; do
     ln -s $dir/$file ~/.$file
 done
 
+# Opencode
+ln -s $dir/opencode.jsonc ~/.config/opencode/opencode.jsonc
+
 # https://ohmyz.sh/
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
