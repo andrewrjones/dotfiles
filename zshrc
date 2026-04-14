@@ -90,3 +90,21 @@ export MISE_ENV_FILE=.env
 export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
+# --- Project terminal background ---
+# Changes the terminal background color based on the current git repo.
+# Color is deterministic per repo (derived from the repo root path).
+_project_bg() {
+  local git_root
+  git_root=$(git rev-parse --show-toplevel 2>/dev/null) || {
+    printf '\e]111\e\\'
+    return
+  }
+  local hash=$(printf '%s' "$git_root" | md5 -q)
+  local r=$(( 16#${hash:0:2} % 71 + 30 ))
+  local g=$(( 16#${hash:2:2} % 71 + 30 ))
+  local b=$(( 16#${hash:4:2} % 71 + 30 ))
+  printf '\e]11;#%02x%02x%02x\e\\' $r $g $b
+}
+chpwd_functions+=(_project_bg)
+_project_bg
+
