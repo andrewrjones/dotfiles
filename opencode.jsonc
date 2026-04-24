@@ -40,6 +40,7 @@
       "gradlew *": "allow",
       "npm *": "allow",
       "uv *": "allow",
+      "mise *": "allow",
       
       // things that are always denied
       "git push*": "deny"
