@@ -5,7 +5,24 @@
   "autoupdate": true,
   "instructions": ["~/.dotfiles/INSTRUCTIONS.md"], // enter a filename here to specify shared instructions
   "share": "disabled",
-  "enabled_providers": ["github-copilot"],
+  "enabled_providers": ["github-copilot", "lmstudio"],
+  "provider": {
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LM Studio (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1"
+      },
+      "models": {
+        "google/gemma-4-26b-a4b": {
+          "name": "gemma-4-26b-a4b (local)"
+        },
+        "qwen/qwen3.6-35b-a3b": {
+          "name": "qwen3.6-35b-a3b (local)"
+        }
+      }
+    }
+  },
   "permission": {
     "bash": {
       "*": "ask",
