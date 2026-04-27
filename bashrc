@@ -338,6 +338,6 @@ export PATH="/Users/andrewjones/.rd/bin:$PATH"
 . "$HOME/.local/bin/env"
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/ajw3402/.lmstudio/bin"
+export PATH="$PATH:~/.lmstudio/bin"
 # End of LM Studio CLI section
 
