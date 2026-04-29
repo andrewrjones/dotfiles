@@ -26,10 +26,10 @@
   amend = commit -a --amend
   qamend = commit -a --amend --no-edit
   w = "!reword() { git commit --amend -m \"$1\"; }; reword"
-  # remove all merged branches. should be ran from master
-  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs git branch -d; }; f"
-  # runs bclean from master, after pulling
-  bdone = "!f() { git checkout ${1-master} && git up && git bclean ${1-master}; }; f"
+  # remove all merged branches. should be ran from master/main
+  bclean = "!f() { git branch --merged `git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'` | grep -v " `git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'`$" | xargs git branch -d; }; f"
+  # runs bclean from master/main, after pulling
+  bdone = "!f() { git checkout `git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'` && git up && git bclean; }; f"
   ec = config --global -e
 	unadd = reset HEAD
 	tree = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
