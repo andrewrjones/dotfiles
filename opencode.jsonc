@@ -5,7 +5,7 @@
   "autoupdate": true,
   "instructions": ["~/.dotfiles/INSTRUCTIONS.md"], // enter a filename here to specify shared instructions
   "share": "disabled",
-  "enabled_providers": ["github-copilot", "lmstudio"],
+  "enabled_providers": ["lmstudio"],
   "provider": {
     "lmstudio": {
       "npm": "@ai-sdk/openai-compatible",
