@@ -49,7 +49,7 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /Users/andrewjones/bin/terraform terraform
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/andrewjones/.rd/bin:$PATH"
+export PATH="${HOME}/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 if [ -f "${HOME}/.local/bin/env" ]; then . "$HOME/.local/bin/env"; fi
@@ -77,6 +77,9 @@ source $HOME/.dotfiles/worktree-manager/worktree-manager.zsh
 
 export PATH=$HOME/flutter/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
+
+# Tinybird
+export TB_CLI_TELEMETRY_OPTOUT=true
 
 # Github Copilot
 export COPILOT_ALLOW_ALL=true
