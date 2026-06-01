@@ -118,3 +118,5 @@
   path = ~/.gitconfig_local
 [gpg]
 	format = ssh
+[commit]
+	gpgsign = true
