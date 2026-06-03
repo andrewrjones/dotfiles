@@ -110,3 +110,5 @@ _project_bg() {
 chpwd_functions+=(_project_bg)
 _project_bg
 
+# Claude
+alias pcl='pbpaste >> CLAUDE.local.md'
