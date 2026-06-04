@@ -9,7 +9,7 @@
   branch-name = "!git rev-parse --abbrev-ref HEAD"
   ci = commit
   st = status -s
-  s = status -s
+  s = show
   co = checkout
   cob = checkout -b
   c = commit -am
