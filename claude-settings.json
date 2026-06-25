@@ -4,6 +4,9 @@
   "permissions": {
     "allow": [
       "Bash(tb sql *)",
+      "Bash(git *)",
+      "Bash(python -m pytest *)",
+      "Bash(uv run *)",
       "Skill(artifact-design)",
       "Artifact"
     ]
