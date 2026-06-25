@@ -287,6 +287,15 @@ defaults write com.apple.ActivityMonitor DiskGraphType -int 1
 defaults write com.apple.ActivityMonitor NetworkGraphType -int 1
 
 ###############################################################################
+# Key Bindings.                                                               #
+###############################################################################
+
+# Update keybindings to give me a proper hash key on my keyboard
+# https://jackbrewer.co.uk/mapping-a-hash-keyboard-button-in-osx
+mkdir -p ~/Library/KeyBindings
+ln -s ~/.dotfiles/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+
+###############################################################################
 # Finalize and Kill affected applications                                     #
 ###############################################################################
 
