@@ -112,3 +112,4 @@ _project_bg
 
 # Claude
 alias pcl='pbpaste >> CLAUDE.local.md'
+export PATH="/opt/homebrew/bin:$PATH"
