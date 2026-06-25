@@ -30,6 +30,7 @@ ln -s $dir/opencode.jsonc ~/.config/opencode/opencode.jsonc
 
 # Claude
 ln -s $dir/INSTRUCTIONS.md ~/.claude/CLAUDE.md
+ln -s $dir/claude-settings.json ~/.claude/settings.json
 
 # https://ohmyz.sh/
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

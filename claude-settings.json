@@ -1,0 +1,11 @@
+{
+  "theme": "dark",
+  "skipWorkflowUsageWarning": true,
+  "permissions": {
+    "allow": [
+      "Bash(tb sql *)",
+      "Skill(artifact-design)",
+      "Artifact"
+    ]
+  }
+}
