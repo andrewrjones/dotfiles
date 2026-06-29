@@ -11,6 +11,9 @@
       "Bash(tb sql *)",
       "Bash(uv run *)",
       "Skill(artifact-design)"
+    ],
+    "deny": [
+      "Bash(git push*)"
     ]
   }
 }
