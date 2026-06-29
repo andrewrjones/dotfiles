@@ -3,12 +3,14 @@
   "skipWorkflowUsageWarning": true,
   "permissions": {
     "allow": [
-      "Bash(tb sql *)",
+      "Artifact",
       "Bash(git *)",
       "Bash(python -m pytest *)",
+      "Bash(tb datasource ls *)",
+      "Bash(tb pipe ls *)",
+      "Bash(tb sql *)",
       "Bash(uv run *)",
-      "Skill(artifact-design)",
-      "Artifact"
+      "Skill(artifact-design)"
     ]
   }
 }
