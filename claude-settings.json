@@ -1,6 +1,4 @@
 {
-  "theme": "dark",
-  "skipWorkflowUsageWarning": true,
   "permissions": {
     "allow": [
       "Artifact",
@@ -12,7 +10,10 @@
       "Bash(tb datasource ls *)",
       "Bash(tb pipe ls *)",
       "Bash(tb sql *)",
+      "Bash(uv --version)",
+      "Bash(uv init *)",
       "Bash(uv run *)",
+      "Bash(uv sync *)",
       "Bash(xargs *)",
       "Skill(artifact-design)",
       "mcp__claude_ai_Notion__notion-search",
@@ -22,5 +23,7 @@
     "deny": [
       "Bash(git push*)"
     ]
-  }
+  },
+  "skipWorkflowUsageWarning": true,
+  "theme": "dark"
 }
