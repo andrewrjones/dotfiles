@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Artifact",
+      "Bash(cue *)",
       "Bash(gh pr *)",
       "Bash(gh run *)",
       "Bash(git *)",
