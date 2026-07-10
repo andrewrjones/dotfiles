@@ -17,6 +17,7 @@
       "Bash(uv sync *)",
       "Bash(xargs *)",
       "Skill(artifact-design)",
+      "Skill(code-review)",
       "mcp__claude_ai_Notion__notion-search",
       "mcp__claude_ai_Notion__notion-fetch",
       "mcp__claude_ai_Slack__slack_search_public_and_private"
