@@ -3,6 +3,7 @@
     "allow": [
       "Artifact",
       "Bash(cue *)",
+      "Bash(echo \"exit:$?\")",
       "Bash(gh pr *)",
       "Bash(gh run *)",
       "Bash(git *)",
