@@ -5,14 +5,20 @@
       "Bash(.venv/bin/python3 -m pytest *)",
       "Bash(cue *)",
       "Bash(echo \"exit:$?\")",
+      "Bash(echo \"exit code: $?\")",
       "Bash(gh pr *)",
       "Bash(gh run *)",
       "Bash(git *)",
       "Bash(mise run *)",
       "Bash(python -m pytest *)",
+      "Bash(tb --cloud workspace current)",
+      "Bash(tb -h)",
+      "Bash(tb --version)",
+      "Bash(tb auth info *)",
       "Bash(tb datasource ls *)",
       "Bash(tb pipe ls *)",
       "Bash(tb sql *)",
+      "Bash(tb workspace current *)",
       "Bash(uv --version)",
       "Bash(uv init *)",
       "Bash(uv run *)",
@@ -28,6 +34,7 @@
       "Bash(git push --force*)"
     ]
   },
+  "model": "claude-opus-4-8",
   "skipWorkflowUsageWarning": true,
   "theme": "dark"
 }
