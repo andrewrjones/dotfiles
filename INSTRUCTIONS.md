@@ -29,9 +29,8 @@ Never skip writing tests. Tests come before implementation.
 - **Commit frequently** - Make atomic commits as value is delivered iteratively
 - **Never push** - I will verify and push changes myself
 - **Commit Messages**:
-  - Use conventional commit messages
   - Keep them simple and direct (e.g., "docs: update readme")
-  - Do NOT list every file change or detailed action steps
+  - Do not write anything in the commit body unless instructed to do so
 
 ## Security
 
