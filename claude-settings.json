@@ -19,6 +19,7 @@
       "Bash(tb branch *)",
       "Bash(tb check *)",
       "Bash(tb datasource ls *)",
+      "Bash(tb info *)",
       "Bash(tb pipe ls *)",
       "Bash(tb sql *)",
       "Bash(tb test *)",
