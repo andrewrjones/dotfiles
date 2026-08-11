@@ -41,6 +41,17 @@
     ]
   },
   "model": "claude-opus-4-8",
+  "extraKnownMarketplaces": {
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    }
+  },
   "skipWorkflowUsageWarning": true,
-  "theme": "dark"
+  "theme": "dark",
+  "enabledPlugins": {
+    "ponytail@ponytail": true
+  }
 }
