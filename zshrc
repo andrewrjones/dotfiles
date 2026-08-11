@@ -93,22 +93,19 @@ export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
 # --- Project terminal background ---
-# Changes the terminal background color based on the current git repo.
-# Color is deterministic per repo (derived from the repo root path).
+# Sets the terminal background from the current git repo's colour.
+# Colour comes from `project-color` (single source of truth on PATH).
 _project_bg() {
-  local git_root
-  git_root=$(git rev-parse --show-toplevel 2>/dev/null) || {
+  local color
+  if color=$(project-color 2>/dev/null); then
+    printf '\e]11;%s\e\\' "$color"
+  else
     printf '\e]111\e\\'
-    return
-  }
-  local hash=$(printf '%s' "$git_root" | md5 -q)
-  local r=$(( 16#${hash:0:2} % 71 + 30 ))
-  local g=$(( 16#${hash:2:2} % 71 + 30 ))
-  local b=$(( 16#${hash:4:2} % 71 + 30 ))
-  printf '\e]11;#%02x%02x%02x\e\\' $r $g $b
+  fi
 }
-chpwd_functions+=(_project_bg)
-_project_bg
+# precmd (not chpwd) so the first prompt after a cmux session restore paints,
+# and any later theme clobber self-heals on the next prompt.
+precmd_functions+=(_project_bg)
 
 # Claude
 alias pcl='pbpaste >> CLAUDE.local.md'
