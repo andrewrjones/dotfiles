@@ -28,6 +28,9 @@ done
 # Opencode
 ln -s $dir/opencode.jsonc ~/.config/opencode/opencode.jsonc
 
+# cmux
+ln -s $dir/cmux.json ~/.config/cmux/cmux.json
+
 # Claude
 ln -s $dir/INSTRUCTIONS.md ~/.claude/CLAUDE.md
 ln -s $dir/claude-settings.json ~/.claude/settings.json
