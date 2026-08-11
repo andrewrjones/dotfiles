@@ -26,7 +26,7 @@
     "app" : {
   //     "windowTitleTemplate" : "",
   //     "reorderOnNotification" : true,
-      "sendAnonymousTelemetry" : true
+      "sendAnonymousTelemetry" : false
   //     "confirmQuit" : "always",
   //     "focusHistoryIncludesPanesAndTabs" : false,
   //     "language" : "system",
@@ -48,7 +48,7 @@
   //     "renameSelectsExistingName" : true,
   //     "focusPaneOnFirstClick" : false,
   //     "warnBeforeClosingTab" : true
-    }
+    },
 
   //   "workspaceGroups" : {
   //     "newWorkspacePlacement" : "afterCurrent"
@@ -262,8 +262,10 @@
   //     "defaultLayout" : "unified"
   //   },
 
-  //   "shortcuts" : {
-  //     "bindings" : {
+    "shortcuts" : {
+      "bindings" : {
+        "nextSidebarTab": "cmd+]",
+        "prevSidebarTab": "cmd+[",
   //       "toggleSplitZoom" : "cmd+shift+return",
   //       "fileExplorerOpenSelection" : "return",
   //       "cycleWorkspaceStatus" : "cmd+shift+;",
@@ -293,7 +295,7 @@
   //         "]",
   //         "f"
   //       ],
-  //       "browserForward" : "cmd+]",
+        "browserForward" : "",
   //       "canvasAlignBottom" : "",
   //       "newWorkspaceGroup" : "cmd+ctrl+g",
   //       "canvasEqualizeHeights" : "",
@@ -311,7 +313,8 @@
   //       "focusRightSidebar" : "cmd+shift+e",
   //       "selectSurfaceByNumber" : "ctrl+1",
   //       "toggleBrowserFocusMode" : "cmd+opt+return",
-  //       "focusHistoryBack" : "cmd+[",
+        "focusHistoryBack" : "",
+        "focusHistoryForward" : "",
   //       "toggleBrowserDeveloperTools" : "cmd+opt+i",
   //       "resetWorkspaceTerminalFontSize" : "cmd+ctrl+0",
   //       "closeOtherTabsInPane" : "cmd+opt+t",
@@ -341,7 +344,7 @@
   //       "diffViewerScrollHalfPageDown" : "ctrl+d",
   //       "clearScreenKeepScrollback" : "cmd+shift+k",
   //       "diffViewerOpenFileSearch" : "\/",
-  //       "browserBack" : "cmd+[",
+        "browserBack" : ""
   //       "focusRight" : "cmd+opt+→",
   //       "diffViewerScrollDown" : "j",
   //       "jumpToUnread" : "cmd+shift+u",
@@ -411,6 +414,6 @@
   //       "equalizeSplits" : "cmd+shift+ctrl+=",
   //       "focusBrowserAddressBar" : "cmd+l",
   //       "canvasRevealFocusedPane" : "cmd+ctrl+r"
-  //     }
-  //   },
+      }
+    }
 }
