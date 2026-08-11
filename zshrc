@@ -98,13 +98,19 @@ export PATH="$PATH:$HOME/.lmstudio/bin"
 _project_bg() {
   local color
   if color=$(project-color 2>/dev/null); then
-    printf '\e]11;%s\e\\' "$color"
+    # cmux/ghostty dedupes identical OSC 11 values (a repeat is a silent
+    # no-op), so a re-emit after cmux paints its own background never lands.
+    # Force a transition by first setting an imperceptibly different colour
+    # (blue channel ±1) then the target, both in one write. No visible flicker.
+    local rgb=${color#\#}
+    local nudge; printf -v nudge '#%s%02x' "${rgb:0:4}" $(( 16#${rgb:4:2} ^ 1 ))
+    printf '\e]11;%s\e\\\e]11;%s\e\\' "$nudge" "$color"
   else
     printf '\e]111\e\\'
   fi
 }
 # precmd (not chpwd) so the first prompt after a cmux session restore paints,
-# and any later theme clobber self-heals on the next prompt.
+# and any later clobber self-heals on the next prompt.
 precmd_functions+=(_project_bg)
 
 # Claude
