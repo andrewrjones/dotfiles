@@ -22,6 +22,7 @@
       "Bash(tb info *)",
       "Bash(tb pipe ls *)",
       "Bash(tb sql *)",
+      "Bash(tb --no-version-warning sql *)",
       "Bash(tb test *)",
       "Bash(tb workspace current *)",
       "Bash(uv --version)",
@@ -39,6 +40,10 @@
     "deny": [
       "Bash(git push --force*)"
     ]
+  },
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
   },
   "model": "claude-opus-4-8",
   "extraKnownMarketplaces": {
