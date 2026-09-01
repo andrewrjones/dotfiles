@@ -43,7 +43,12 @@
   },
   "sandbox": {
     "enabled": true,
-    "autoAllowBashIfSandboxed": true
+    "autoAllowBashIfSandboxed": true,
+    "credentials": {
+      "files": [
+        { "path": ".tinyb", "mode": "deny" }
+      ]
+    }
   },
   "model": "claude-opus-4-8",
   "extraKnownMarketplaces": {
