@@ -44,6 +44,9 @@
   "sandbox": {
     "enabled": true,
     "autoAllowBashIfSandboxed": true,
+    "filesystem": {
+      "allowWrite": ["~/.cache/uv"]
+    },
     "credentials": {
       "files": [
         { "path": ".tinyb", "mode": "deny" }
@@ -61,6 +64,7 @@
   },
   "skipWorkflowUsageWarning": true,
   "theme": "dark",
+  "outputStyle": "Concise",
   "enabledPlugins": {
     "ponytail@ponytail": true
   }
