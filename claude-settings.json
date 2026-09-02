@@ -47,6 +47,14 @@
     "filesystem": {
       "allowWrite": ["~/.cache/uv"]
     },
+    "network": {
+      "allowedDomains": [
+        "github.com",
+        "*.npmjs.org",
+        "app.notion.com",
+        "linear.app"
+      ]
+    },
     "credentials": {
       "files": [
         { "path": ".tinyb", "mode": "deny" }
