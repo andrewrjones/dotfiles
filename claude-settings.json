@@ -49,10 +49,12 @@
     },
     "network": {
       "allowedDomains": [
-        "github.com",
         "*.npmjs.org",
+        "*.tinybird.co",
         "app.notion.com",
-        "linear.app"
+        "*.github.com",
+        "linear.app",
+        "pypi.org"
       ]
     },
     "credentials": {
