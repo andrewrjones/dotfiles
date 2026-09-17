@@ -55,7 +55,8 @@
         "*.github.com",
         "linear.app",
         "pypi.org"
-      ]
+      ],
+      "allowUnixSockets": ["~/.rd/docker.sock"]
     },
     "credentials": {
       "files": [
