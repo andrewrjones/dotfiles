@@ -52,6 +52,7 @@
         "*.npmjs.org",
         "*.tinybird.co",
         "app.notion.com",
+        "github.com",
         "*.github.com",
         "linear.app",
         "pypi.org"
